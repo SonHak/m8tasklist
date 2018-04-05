@@ -1,6 +1,7 @@
 <?php
-	include('connect.php');
-	echo "hello world!";	
+	if(include('connect.php')){
+		echo "hello world!";	
+	}
 	crearTabla();
 	insertarDatos("Tarea1","Esta es la primera tarea",1);
 
