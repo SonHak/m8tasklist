@@ -4,32 +4,25 @@
     	$dbname = "dc1md9da6pqja0";
     	$username = "vfefuxixlzddch";
    		$pw = "65743a71b2332c4a84d161eb2f6ffae1f8e49b4ea3fc971d49d692c966a76b1f";
-    	$pdo = new PDO ("pgsql:host=$hostname;port=5432;dbname=$dbname","$username","$pw");
+    	$pdo = new PDO ("pgsql:host=$hostname;dbname=$dbname","$username","$pw");
 	}catch (PDOException $e){
 		echo "Failed to get DB handle: " . $e->getMessage() . "\n";
     	exit;
 	}
 
-	/*
-	//crae la tabla
-	$query = $pdo->prepare("CREATE TABLE IF NOT EXISTS 'tasklist'(
-								'id' INT AUTO_INCREMENT NOT NULL,
-								'task' varchar(100) NOT NULL,
-								'desc' TEXT,
-								'check' tinyint,
-  			   				  )");
-	$query->execute();
+	if(isset($_POST['tarea'])){
+		echo "hola";
+	}else{
+		echo "<form method='post' action='index.php'>
+		      <label>INTRODUCE UNA NUEVA TAREA</label>
+		      <input type='text' name='tarea'>
+		      <input type='submit' value='Enviar'>
+		      </form>
+		      ";
+
+	}
 
 
-	//inserta datos
-	$query = $pdo->prepare("INSERT INTO tasklist VALUES(:task, :desc, :check)");
-	$query->execute(array(
-		"task" => "tarea1",
-		"desc" => "descripcion1",
-		"check" => 1
-	));
-
-	*/
 	$query = $pdo->prepare("select * FROM tasklist");
 	$query->execute();
 
