@@ -51,6 +51,7 @@
 				while ( $row ) {
 				echo "<td>". $row['id']. "</td>";
 				echo "<td>". $row['task']."</td>";
+				echo "<input type='checkbox' id=".$row['id'].">";
 				echo "<tr></tr>";
 				$row = $query->fetch();
 				}
