@@ -15,14 +15,14 @@
 		$query->execute();
 
 		echo "<form method='post' action='index.php'>
-		      <label>INTRODUCE UNA NUEVA TAREA</label>
+		      <label>Create New Task</label>
 		      <input type='text' name='tarea'>
 		      <input type='submit' value='Enviar'>
 		      </form>
 		      ";
 	}else{
 		echo "<form method='post' action='index.php'>
-		      <label>INTRODUCE UNA NUEVA TAREA</label>
+		      <label>Create New Task</label>
 		      <input type='text' name='tarea'>
 		      <input type='submit' value='Enviar'>
 		      </form>
@@ -34,12 +34,17 @@
 
 
 <html>
-
+	<head>
+		<style>
+			table {border: 1px solid black;}
+		</style>
+	</head>
 	<body>
 		<table>
 			<thead>
 				<th>ID</th>
-				<th>Tarea</th>
+				<th>Task</th>
+				<th>Done</th>
 			</thead>
 			<tr></tr>
 			<?php
