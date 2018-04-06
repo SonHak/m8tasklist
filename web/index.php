@@ -34,14 +34,7 @@
 
 
 <html>
-	<head>
-		<script>
-			function checked(event){
-				event.currentTarget.attr("disabled",true);
-			}
 
-		</script>
-	</head>
 	<body>
 		<table>
 			<thead>
@@ -66,5 +59,13 @@
 
 			?>
 		</table>
+
+
+		<script>
+			function checked(event){
+				event.currentTarget.attr("disabled",true);
+			}
+
+		</script>
 	</body>
 </html>
