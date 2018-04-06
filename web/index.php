@@ -9,8 +9,9 @@
 		echo "Failed to get DB handle: " . $e->getMessage() . "\n";
     	exit;
 	}
-	/*
+	
 	crearTabla();
+	
 	insertarDatos("Tarea1","Esta es la primera tarea",1);
 
 
@@ -23,7 +24,7 @@
 	echo $row['task']." - " . $row['desc']." - ".$row['check']."<br/>";
 	$row = $query->fetch();
 	}
-
+	
 
 
 	//Create table
@@ -49,5 +50,5 @@
 
 
 
-*/
+
 ?>
