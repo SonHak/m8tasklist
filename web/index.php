@@ -11,7 +11,8 @@
 	}
 
 	if(isset($_POST['tarea'])){
-		echo "hola";
+		$query = $pdo->prepare("INSERT INTO tasklist (task) VALUES ($_POST['tarea'])");
+		$query->execute();
 	}else{
 		echo "<form method='post' action='index.php'>
 		      <label>INTRODUCE UNA NUEVA TAREA</label>
