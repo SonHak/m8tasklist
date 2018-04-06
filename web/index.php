@@ -34,6 +34,14 @@
 
 
 <html>
+	<head>
+		<script type="text/javascript">
+			function checked(event){
+				event.currentTarget.attr("disabled",true);
+			}
+
+		</script>
+	</head>
 	<body>
 		<table>
 			<thead>
@@ -51,7 +59,7 @@
 				while ( $row ) {
 				echo "<td>". $row['id']. "</td>";
 				echo "<td>". $row['task']."</td>";
-				echo "<input type='checkbox' id=".$row['id'].">";
+				echo "<td><input type='checkbox' id=".$row['id']." onfocus='checked(event)'></td>";
 				echo "<tr></tr>";
 				$row = $query->fetch();
 				}
