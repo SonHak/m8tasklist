@@ -13,6 +13,13 @@
 	if(isset($_POST['tarea'])){
 		$query = $pdo->prepare("INSERT INTO tasklist (task) VALUES ('".$_POST['tarea']."')");
 		$query->execute();
+
+		echo "<form method='post' action='index.php'>
+		      <label>INTRODUCE UNA NUEVA TAREA</label>
+		      <input type='text' name='tarea'>
+		      <input type='submit' value='Enviar'>
+		      </form>
+		      ";
 	}else{
 		echo "<form method='post' action='index.php'>
 		      <label>INTRODUCE UNA NUEVA TAREA</label>
@@ -23,37 +30,32 @@
 
 	}
 
-
-	$query = $pdo->prepare("select * FROM tasklist");
-	$query->execute();
-
-	//anem agafant les fileres d'amb una amb una
-	$row = $query->fetch();
-	while ( $row ) {
-	echo $row['id']." - " . $row['task']."<br/>";
-	$row = $query->fetch();
-	}
-
-
-
-	
-	/*
-	crearTabla();
-	
-	insertarDatos("Tarea1","Esta es la primera tarea",1);
-	
-	*/
-
-
-	//Create table
-	
-
-	//Insert date
-	function insertarDatos($tarea,$descrip,$hecho){
-		
-	}
-
-
-
-
 ?>
+
+
+<html>
+	<body>
+		<table>
+			<thead>
+				<th>ID</th>
+				<th>Tarea</th>
+			</thead>
+			<tr></tr>
+			<?php
+
+				$query = $pdo->prepare("select * FROM tasklist");
+				$query->execute();
+
+				//anem agafant les fileres d'amb una amb una
+				$row = $query->fetch();
+				while ( $row ) {
+				echo "<td>". $row['id']. "</td>";
+				echo "<td>". $row['task']."</td>";
+				echo "<tr></tr>";
+				$row = $query->fetch();
+				}
+
+			?>
+		</table>
+	</body>
+</html>
