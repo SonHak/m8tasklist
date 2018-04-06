@@ -52,7 +52,7 @@
 				while ( $row ) {
 				echo "<td>". $row['id']. "</td>";
 				echo "<td>". $row['task']."</td>";
-				echo "<td><input type='checkbox' id=".$row['id']." onfocus='checked(event)'></td>";
+				echo "<td><input type='checkbox' id=".$row['id']." onfocus='checkear(event)'></td>";
 				echo "<tr></tr>";
 				$row = $query->fetch();
 				}
@@ -62,7 +62,7 @@
 
 
 		<script>
-			function checked(event){
+			function checkear(event){
 				event.currentTarget.attr("disabled",true);
 			}
 
