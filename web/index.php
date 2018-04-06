@@ -13,8 +13,8 @@
 	crearTabla();
 	
 	insertarDatos("Tarea1","Esta es la primera tarea",1);
-
-
+	echo "hola";
+	/*
 	$query = $pdo->prepare("select * FROM tasklist");
 	$query->execute();
 
@@ -24,7 +24,7 @@
 	echo $row['task']." - " . $row['desc']." - ".$row['check']."<br/>";
 	$row = $query->fetch();
 	}
-	
+	*/
 
 
 	//Create table
