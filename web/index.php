@@ -63,7 +63,8 @@
 
 		<script>
 			function checkear(event){
-				event.currentTarget.attr("disabled",true);
+				var obj = event.currentTarget;
+				obj.attr("disabled",true);
 			}
 
 		</script>
