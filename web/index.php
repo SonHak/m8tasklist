@@ -9,6 +9,7 @@
 		echo "Failed to get DB handle: " . $e->getMessage() . "\n";
     	exit;
 	}
+	//crae la tabla
 	$query = $pdo->prepare("CREATE TABLE IF NOT EXISTS 'tasklist'(
 								'id' INT AUTO_INCREMENT NOT NULL,
 								'task' varchar(100) NOT NULL,
@@ -16,7 +17,16 @@
 								'check' tinyint,
   			   				  )");
 	$query->execute();
-	
+
+
+	//inserta datos
+	$query = $pdo->prepare("INSERT INTO tasklist VALUES(:task, :desc, :check)");
+	$query->execute(array(
+		"task" => "tarea1",
+		"desc" => "descripcion1",
+		"check" => 1
+	));
+
 	echo "hola";
 	/*
 	crearTabla();
@@ -39,12 +49,7 @@
 
 	//Insert date
 	function insertarDatos($tarea,$descrip,$hecho){
-		$query = $pdo->prepare("INSERT INTO tasklist VALUES(:task, :desc, :check)");
-		$query->execute(array(
-			"task" => $tarea,
-			"desc" => $descrip,
-			"check" => $hecho
-		));
+		
 	}
 
 
