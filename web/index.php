@@ -35,7 +35,7 @@
 
 <html>
 	<head>
-		<script type="text/javascript">
+		<script>
 			function checked(event){
 				event.currentTarget.attr("disabled",true);
 			}
