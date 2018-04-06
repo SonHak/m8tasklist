@@ -27,11 +27,7 @@
 		"check" => 1
 	));
 
-	echo "hola";
-	/*
-	crearTabla();
-	
-	insertarDatos("Tarea1","Esta es la primera tarea",1);
+
 	$query = $pdo->prepare("select * FROM tasklist");
 	$query->execute();
 
@@ -41,6 +37,15 @@
 	echo $row['task']." - " . $row['desc']." - ".$row['check']."<br/>";
 	$row = $query->fetch();
 	}
+
+
+
+	
+	/*
+	crearTabla();
+	
+	insertarDatos("Tarea1","Esta es la primera tarea",1);
+	
 	*/
 
 
